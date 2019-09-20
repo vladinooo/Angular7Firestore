@@ -11,13 +11,22 @@ import {EmployeeService} from './shared/employee.service';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+// import { LoginComponent } from './login/login.component';
+// import { EmailComponent } from './email/email.component';
+// import { SignupComponent } from './signup/signup.component';
+// import { MembersComponent } from './members/members.component';
+import {routes} from './app.routes';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeesComponent,
     EmployeeComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    // LoginComponent,
+    // EmailComponent,
+    // SignupComponent,
+    // MembersComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +34,8 @@ import { ToastrModule } from 'ngx-toastr';
     AngularFirestoreModule,
     FormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    routes
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]
