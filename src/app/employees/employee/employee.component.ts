@@ -3,6 +3,7 @@ import {EmployeeService} from '../../shared/employee.service';
 import {NgForm} from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
+import {AuthService} from '../../auth.service';
 
 @Component({
   selector: 'app-employee',
@@ -13,7 +14,8 @@ export class EmployeeComponent implements OnInit {
 
   constructor(private service: EmployeeService,
               private firestore: AngularFirestore,
-              private toastr: ToastrService) { }
+              private toastr: ToastrService,
+              public auth: AuthService) { }
 
   ngOnInit() {
     this.resetForm();

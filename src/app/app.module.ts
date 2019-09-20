@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import {environment} from '../environments/environment';
 import { EmployeesComponent } from './employees/employees.component';
@@ -15,7 +16,8 @@ import { ToastrModule } from 'ngx-toastr';
 // import { EmailComponent } from './email/email.component';
 // import { SignupComponent } from './signup/signup.component';
 // import { MembersComponent } from './members/members.component';
-import {routes} from './app.routes';
+import { AppRoutingModule } from './app-routing.module';
+import { SuperSecretComponent } from './super-secret/super-secret.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import {routes} from './app.routes';
     EmployeesComponent,
     EmployeeComponent,
     EmployeeListComponent,
+    SuperSecretComponent,
     // LoginComponent,
     // EmailComponent,
     // SignupComponent,
@@ -35,7 +38,8 @@ import {routes} from './app.routes';
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    routes
+    AppRoutingModule,
+    AngularFireAuthModule
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]

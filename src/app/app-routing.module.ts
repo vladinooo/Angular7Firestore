@@ -1,6 +1,7 @@
-import { ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { SuperSecretComponent } from './super-secret/super-secret.component';
+import {AuthGuard} from './auth.guard';
 // import { AppComponent } from './app.component';
 // import { LoginComponent } from './login/login.component';
 // import {SignupComponent} from './signup/signup.component';
@@ -8,12 +9,17 @@ import { Routes, RouterModule } from '@angular/router';
 // import {MembersComponent} from './members/members.component';
 // import {AuthGuard} from './auth.service';
 
-export const router: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full'}
+const routes: Routes = [
+  // { path: '', redirectTo: 'login', pathMatch: 'full'},
+  { path: 'secret', component: SuperSecretComponent, canActivate: [AuthGuard] }
   // { path: 'login', component: LoginComponent},
   // { path: 'signup', component: SignupComponent},
   // { path: 'login-email', component: EmailComponent},
   // { path: 'members', component: MembersComponent, canActivate: [AuthGuard]}
-]
+];
 
-export const routes: ModuleWithProviders = RouterModule.forRoot(router);
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
