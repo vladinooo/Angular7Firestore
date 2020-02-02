@@ -10,14 +10,13 @@ import { EmployeeComponent } from './employees/employee/employee.component';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 import {EmployeeService} from './shared/employee.service';
 import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-// import { LoginComponent } from './login/login.component';
-// import { EmailComponent } from './email/email.component';
-// import { SignupComponent } from './signup/signup.component';
-// import { MembersComponent } from './members/members.component';
+import { LoginEmailComponent } from './login-email/login-email.component';
+import { SignupComponent } from './signup/signup.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SuperSecretComponent } from './super-secret/super-secret.component';
+import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './auth.guard';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,23 +24,21 @@ import { SuperSecretComponent } from './super-secret/super-secret.component';
     EmployeesComponent,
     EmployeeComponent,
     EmployeeListComponent,
-    SuperSecretComponent,
-    // LoginComponent,
-    // EmailComponent,
-    // SignupComponent,
-    // MembersComponent
+    LoginEmailComponent,
+    SignupComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     FormsModule,
-    BrowserAnimationsModule,
     ToastrModule.forRoot(),
     AppRoutingModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    BrowserAnimationsModule
   ],
-  providers: [EmployeeService],
+  providers: [EmployeeService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

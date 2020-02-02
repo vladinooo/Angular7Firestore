@@ -1,14 +1,10 @@
 // import { Component, OnInit } from '@angular/core';
-// import {AngularFire, AuthMethods, AuthProviders} from '@angular/fire/auth';
 // import {Router} from '@angular/router';
-// import {fallIn, moveIn} from '../router.animations';
 //
 // @Component({
 //   selector: 'app-email',
 //   templateUrl: './email.component.html',
 //   styleUrls: ['./email.component.css'],
-//   animations: [moveIn(), fallIn()],
-//   host: {'[@moveIn]': ''}
 // })
 // export class EmailComponent implements OnInit {
 //

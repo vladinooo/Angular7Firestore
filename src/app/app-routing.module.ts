@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SuperSecretComponent } from './super-secret/super-secret.component';
+import { EmployeeComponent } from './employees/employee/employee.component';
+import {SignupComponent} from './signup/signup.component';
+import {LoginEmailComponent} from './login-email/login-email.component';
+import {HomeComponent} from './home/home.component';
 import {AuthGuard} from './auth.guard';
-// import { AppComponent } from './app.component';
-// import { LoginComponent } from './login/login.component';
-// import {SignupComponent} from './signup/signup.component';
-// import {EmailComponent} from './email/email.component';
-// import {MembersComponent} from './members/members.component';
-// import {AuthGuard} from './auth.service';
+import {EmployeesComponent} from './employees/employees.component';
+import {EmployeeListComponent} from './employees/employee-list/employee-list.component';
 
 const routes: Routes = [
-  // { path: '', redirectTo: 'login', pathMatch: 'full'},
-  { path: 'secret', component: SuperSecretComponent, canActivate: [AuthGuard] }
-  // { path: 'login', component: LoginComponent},
-  // { path: 'signup', component: SignupComponent},
-  // { path: 'login-email', component: EmailComponent},
-  // { path: 'members', component: MembersComponent, canActivate: [AuthGuard]}
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'home', component: HomeComponent},
+  { path: 'signup', component: SignupComponent},
+  { path: 'login-email', component: LoginEmailComponent},
+  { path: 'employee', component: EmployeeComponent, canActivate: [AuthGuard]},
+  { path: 'employees', component: EmployeesComponent, canActivate: [AuthGuard]},
+  { path: 'employee-list', component: EmployeeListComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

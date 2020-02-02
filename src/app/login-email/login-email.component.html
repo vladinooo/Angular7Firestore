@@ -1,0 +1,14 @@
+<div class="form-container">
+  <a routerLink="/home">< Go back</a>
+
+  <h2>Email login</h2>
+
+  <span class="error" *ngIf="error">{{ error }}</span>
+
+  <form #formData='ngForm' (ngSubmit)="login(formData)">
+    <input type="text" placeholder="Email address" ngModel email="ngModel" name="email" class="txt" required>
+    <input type="text" placeholder="Password" ngModel password="ngModel" name="password" class="txt" required>
+    <button type="submit" [disabled]="!formData.valid" class="basic-btn">Log in</button>
+    <a routerLink="/signup" class="alc">Don't have an account?</a>
+  </form>
+</div>

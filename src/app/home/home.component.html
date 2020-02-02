@@ -1,0 +1,8 @@
+<p *ngIf="user">Logged in as: {{user?.email}}</p>
+
+<div class="form-container">
+  <button class="basic-btn" *ngIf="!user" (click)="register()">Register</button>
+  <button class="basic-btn" *ngIf="user" (click)="employees()">Employees</button>
+  <button class="basic-btn" *ngIf="user" (click)="logout()">Logout</button>
+  <button class="basic-btn" *ngIf="!user" (click)="login()">Login</button>
+</div>
